@@ -15,7 +15,7 @@ int uninitGlobal2;
 void checkStack(int* parentAddr) {
     int childVar = 0;
     cout << "--- STACK SEGMENT (Cross-function comparison) ---" << endl;
-    cout << "msin local addr (parent frame) : " << (void*)parentAddr << endl;
+    cout << "main local addr (parent frame) : " << (void*)parentAddr << endl;
     cout << "param addr (child frame) : " << (void*)&parentAddr << endl;
     cout << "child local addr (child frame) : " << (void*)&childVar << endl;
     cout << "Stack grows: " << ((&childVar < parentAddr) ? "DOWN" : "UP") << endl;
@@ -63,18 +63,18 @@ int main() {
     // TODO: Print HEAP segment - 2 heap addresses + comparison
     //       Print "Heap grows: UP" or "DOWN"
     cout << "--- HEAP SEGMENT (Dynamic Allocation) ---" << endl;
-    cout << "heaperVar1 address: " << (void*)heaprerVar1 << endl;
-    cout << "heaperVar2 address: " << (void*)heaprerVar2 << endl;
+    cout << "heapVar1 addr: " << (void*)heaprerVar1 << endl;
+    cout << "heapVar2 addr: " << (void*)heaprerVar2 << endl;
     cout << "Heap grows: " << ((heaprerVar2 > heaprerVar1) ? "UP" : "DOWN") << endl;
     cout << endl;
 
     // TODO: Print relative position summary
     cout << "=== RELATIVE POSITION SUMMARY ===" << endl;
-   cout << "TEXT (lowest) : " << (void*)&main << endl;
-   cout << "DATA : " << (void*)&globalVar << endl;
-   cout << "BSS : " << (void*)&uninitGlobal1 << endl;
-   cout << "HEAP : " << (void*)heaprerVar1 << endl;
-   cout << "STACK (highest) : " << (void*)&minVar << endl;
+    cout << "TEXT (lowest) : " << (void*)&main << endl;
+    cout << "DATA : " << (void*)&globalVar << endl;
+    cout << "BSS : " << (void*)&uninitGlobal1 << endl;
+    cout << "HEAP : " << (void*)heaprerVar1 << endl;
+    cout << "STACK (highest) : " << (void*)&minVar << endl;
 
     // TODO: Free all heap allocations
     free(heaprerVar1);
