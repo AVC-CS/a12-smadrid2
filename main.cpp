@@ -29,8 +29,8 @@ int main() {
     // TODO: Allocate 2 heap variables using malloc (use larger sizes, e.g. 1024)
     //       Note: new may not allocate sequentially; malloc with larger sizes
     //       is more reliable for demonstrating heap growth direction
-    char* heaprerVar1 = (char*)malloc(1024);
-    char* heaprerVar2 = (char*)malloc(1024);
+    char* heapVar1 = (char*)malloc(1024);
+    char* heapVar2 = (char*)malloc(1024);
 
     cout << "=== MEMORY SEGMENT BOUNDARIES ===" << endl;
     cout << endl;
@@ -63,9 +63,9 @@ int main() {
     // TODO: Print HEAP segment - 2 heap addresses + comparison
     //       Print "Heap grows: UP" or "DOWN"
     cout << "--- HEAP SEGMENT (Dynamic Allocation) ---" << endl;
-    cout << "heapVar1 addr: " << (void*)heaprerVar1 << endl;
-    cout << "heapVar2 addr: " << (void*)heaprerVar2 << endl;
-    cout << "Heap grows: " << ((heaprerVar2 > heaprerVar1) ? "UP" : "DOWN") << endl;
+    cout << "heapVar1 addr: " << (void*)heapVar1 << endl;
+    cout << "heapVar2 addr: " << (void*)heapVar2 << endl;
+    cout << "Heap grows: " << ((heapVar2 > heapVar1) ? "UP" : "DOWN") << endl;
     cout << endl;
 
     // TODO: Print relative position summary
@@ -73,12 +73,12 @@ int main() {
     cout << "TEXT (lowest) : " << (void*)&main << endl;
     cout << "DATA : " << (void*)&globalVar << endl;
     cout << "BSS : " << (void*)&uninitGlobal1 << endl;
-    cout << "HEAP : " << (void*)heaprerVar1 << endl;
+    cout << "HEAP : " << (void*)heapVar1 << endl;
     cout << "STACK (highest) : " << (void*)&minVar << endl;
 
     // TODO: Free all heap allocations
-    free(heaprerVar1);
-    free(heaprerVar2);
+    free(heapVar1);
+    free(heapVar2);
 
     return 0;
 }
