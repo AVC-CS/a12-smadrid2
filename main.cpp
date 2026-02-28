@@ -39,7 +39,7 @@ int main() {
     //       e.g., (void*)&main and (void*)&checkStack
     cout << "--- TEXT SEGMENT (Code) ---" << endl;
     cout << "Address of main(): " << (void*)&main << endl;
-    cout << "Address of checkStack(): " << (void*)&checkStack << endl;
+    cout << "Address of check fn: " << (void*)&checkStack << endl;
     cout << endl;
 
     // TODO: Print DATA segment - 2 initialized global addresses + values
@@ -74,7 +74,7 @@ int main() {
     cout << "DATA : " << (void*)&globalVar << endl;
     cout << "BSS : " << (void*)&uninitGlobal1 << endl;
     cout << "HEAP : " << (void*)heapVar1 << endl;
-    cout << "STACK (highest) : " << (void*)&minVar << endl;
+    cout << "STK (highest) : " << (void*)&minVar << endl;
 
     // TODO: Free all heap allocations
     free(heapVar1);
